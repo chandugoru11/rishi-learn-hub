@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { GraduationCap } from "lucide-react";
 
-const transition = { type: "spring", duration: 0.5, bounce: 0 };
+const transition = { type: "spring" as const, duration: 0.5, bounce: 0 };
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);

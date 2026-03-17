@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
-const transition = { type: "spring", duration: 0.5, bounce: 0 };
+const transition = { type: "spring" as const, duration: 0.5, bounce: 0 };
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });

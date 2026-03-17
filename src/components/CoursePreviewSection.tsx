@@ -15,7 +15,7 @@ const courses = [
 const container = { animate: { transition: { staggerChildren: 0.08 } } };
 const item = {
   initial: { opacity: 0, y: 12, scale: 0.98 },
-  animate: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", duration: 0.5, bounce: 0 } },
+  animate: { opacity: 1, y: 0, scale: 1, transition: { type: "spring" as const, duration: 0.5, bounce: 0 } },
 };
 
 export default function CoursePreviewSection() {

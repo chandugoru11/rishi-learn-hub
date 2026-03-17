@@ -8,7 +8,7 @@ const reasons = [
   { icon: Eye, title: "Expert Instructors", desc: "Learn from professionals with 10+ years of industry experience." },
 ];
 
-const transition = { type: "spring", duration: 0.5, bounce: 0 };
+const transition = { type: "spring" as const, duration: 0.5, bounce: 0 };
 
 export default function About() {
   return (

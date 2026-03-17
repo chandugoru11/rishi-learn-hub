@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen } from "lucide-react";
 import heroImg from "@/assets/hero-illustration.jpg";
 
-const transition = { type: "spring", duration: 0.6, bounce: 0 };
+const transition = { type: "spring" as const, duration: 0.6, bounce: 0 };
 
 export default function HeroSection() {
   return (

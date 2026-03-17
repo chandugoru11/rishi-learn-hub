@@ -8,7 +8,7 @@ const features = [
   { icon: Globe, title: "Public Verification Page", desc: "Share a public verification link so anyone can verify your certificate's authenticity." },
 ];
 
-const transition = { type: "spring", duration: 0.5, bounce: 0 };
+const transition = { type: "spring" as const, duration: 0.5, bounce: 0 };
 
 export default function Certification() {
   return (
