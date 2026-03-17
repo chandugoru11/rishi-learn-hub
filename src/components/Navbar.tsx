@@ -31,13 +31,16 @@ export default function Navbar() {
             <Link
               key={item.path}
               to={item.path}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`group relative px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                 location.pathname === item.path
                   ? "text-primary bg-primary/5"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted"
               }`}
             >
               {item.label}
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"
+              }`} />
             </Link>
           ))}
           <Link

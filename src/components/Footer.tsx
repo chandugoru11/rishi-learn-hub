@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Mail, Phone, MapPin } from "lucide-react";
+import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 
 const quickLinks = [
   { label: "Home", path: "/" },
@@ -66,13 +66,22 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-primary-foreground mb-4">Follow Us</h4>
             <div className="flex gap-3">
-              {["Facebook", "Twitter", "LinkedIn", "YouTube"].map((s) => (
+              {[
+                { icon: Facebook, label: "Facebook", href: "#" },
+                { icon: Twitter, label: "Twitter", href: "#" },
+                { icon: Linkedin, label: "LinkedIn", href: "#" },
+                { icon: Youtube, label: "YouTube", href: "#" },
+              ].map(({ icon: Icon, label, href }) => (
                 <a
-                  key={s}
-                  href="#"
-                  className="w-10 h-10 rounded-lg bg-primary-foreground/5 hover:bg-primary/20 flex items-center justify-center text-xs font-bold text-primary-foreground/60 hover:text-primary transition-colors"
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="group relative w-10 h-10 rounded-lg bg-primary-foreground/5 hover:bg-primary/20 flex items-center justify-center text-primary-foreground/60 hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                 >
-                  {s[0]}
+                  <Icon className="h-5 w-5" />
+                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded text-xs bg-primary text-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                    {label}
+                  </span>
                 </a>
               ))}
             </div>
