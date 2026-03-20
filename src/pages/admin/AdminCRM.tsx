@@ -27,7 +27,7 @@ export default function AdminCRM() {
   const filtered = filter === "all" ? leads : leads.filter((l) => l.status === filter);
 
   const updateStatus = async (id: string, status: string) => {
-    await supabase.from("crm_leads").update({ status }).eq("id", id);
+    await supabase.from("crm_leads").update({ status: status as any }).eq("id", id);
     setLeads(leads.map((l) => (l.id === id ? { ...l, status } : l)));
   };
 

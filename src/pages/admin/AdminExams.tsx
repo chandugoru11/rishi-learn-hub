@@ -35,7 +35,9 @@ export default function AdminExams() {
     e.preventDefault();
     if (!user) return;
     const { error } = await supabase.from("exams").insert({
-      ...form,
+      title: form.title,
+      course_id: form.course_id,
+      exam_type: form.exam_type as any,
       duration_minutes: Number(form.duration_minutes),
       total_marks: Number(form.total_marks),
       pass_marks: Number(form.pass_marks),
